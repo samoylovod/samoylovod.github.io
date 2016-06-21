@@ -238,7 +238,7 @@ a {
   color: #aaa;
 }
   .footer a {
-    color: #666;
+    color: #aaa;
     transition: color .3s linear;
     text-decoration: underline;
   }
