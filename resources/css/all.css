@@ -1,7 +1,7 @@
 /* Импортируем нестандартные шрифты */
 @font-face {
-  font-family: "Roboto Condensed";
-  src: url("/resources/fonts/robotocondensed.ttf");
+  font-family: "Roboto Condensed"; /* название шрифта */
+  src: url("/resources/fonts/robotocondensed.ttf"); /* ссылка на файл шрифта */
   font-weight: normal;
   font-style: normal;
 }
@@ -11,19 +11,17 @@
   font-weight: normal;
   font-style: normal;
 }
+/**/
 
+/* для всего документа */
 body, html {
-  height: 100%;
   background: #eee;
-  font: 14px Play;
+  font: 14px Play, Tahoma;
   color: #666;
 }
+/* для всех ссылок */
 a {
   color: #666;
-}
-
-* {
-  outline: none !important;
 }
 
 .main, .footer {
@@ -34,74 +32,69 @@ a {
   background: #fff;
   box-shadow: 0 0 4px rgba( 0, 0, 0, .15 );
   border-radius: 0 0 6px 6px;
-  overflow: hidden;
+  overflow: hidden; /* скрываем содержимое блока, выходящее за его пределы */
 }
 
 /* Лого */
 .header {
   border-top: 4px solid #60a2ce;
-  /*background: #fff;*/
-  /*background: url( "/resources/img/sprite-small.png" ) center center repeat;*/
-  /*background-size: 100%;*/
 }
 .header > .logo {
   height: 120px;
   padding-left: 160px;
   background: url( "/resources/img/logo-small.png" ) 10px center no-repeat;
 }
-  .header > .logo > span {
+  .header .slogan {
     padding-left: 20px;
     vertical-align: middle;
-    font: italic 16px/120px "Roboto Condensed";
+    font: italic 20px/120px "Roboto Condensed";
   }
 
 /* Верхнее меню */
 .header-menu {
   position: relative;
   box-shadow: 0 0 4px rgba( 0, 0, 0, .15 );
-  z-index: 10;
+  z-index: 2; /* перемещаем на передний план */
   background: #fff;
 }
 .header-menu ul {
-  list-style-type: none;
+  list-style-type: none; /* убираем стандартную маркировку элементов ненумерованного списка */
 }
   .header-menu li {
-    position: relative;
-    display: inline-block;
+    position: relative; /* для позиционирования вложенного элемента (выпадающий список) относительно этого блока */
+    display: inline-block; /* делаем элементы списка строковыми блоками */
   }
   .header-menu a {
     display: block;
-    padding: 15px 20px;
+    padding: 15px 20px; /* внутренние отступы */
     font: 14px Play;
-    text-decoration: none;
-    transition: all .15s linear;
+    text-decoration: none; /* убираем стандартное подчёркивание */
+    transition: all .15s linear; /* задаём анимацию */
   }
     .header-menu a:hover, .header-menu a.active  {
       background: #60a2ce;
       color: #fff;
     }
   .header-menu li > ul {
-    display: none;
+    display: none; /* изначально не отображается */
     position: absolute;
     top: 100%;
     left: 0;
     background: #fff;
     box-shadow: 0 2px 4px rgba( 0, 0, 0, .15);
-    z-index: 1;
   }
+    .header-menu li:hover > ul {
+      display: block;
+    }
     .header-menu li > ul > li {
       display: block;
       min-width: 200px;
-      white-space: nowrap;
     }
-  .header-menu li:hover > ul {
-    display: block;
-  }
+
     
 .content-wrapper {
-  display: table;
+  display: table; /* ведет себя как таблица */
   width: 100%;
-  clear: both;
 }
 
   /* Мероприятия */
@@ -123,8 +116,6 @@ a {
     box-sizing: border-box;
     background-position: center;
     background-size: 140%;
-    /*transition: background-size .3s linear;
-    -o-transition: background-size .3s linear;*/
   }
   .event.first {
     background-image: url( "/resources/img/events-first.jpg" );
@@ -260,11 +251,10 @@ a {
 /* Основное содержимое */
 .content {
   position: relative;
-  display: table-cell;
+  display: table-cell; /* ведет себя как ячейка таблицы */
   overflow: hidden;
   padding: 20px;
   box-shadow: 0 0 4px rgba( 0, 0, 0, .15 );
-  padding: 20px;
 }
 .content .photo {
   width: 100%;
