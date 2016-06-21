@@ -1,0 +1,433 @@
+/* Импортируем нестандартные шрифты */
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("/resources/fonts/robotocondensed.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Play";
+  src: url("/resources/fonts/play.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, html {
+  height: 100%;
+  background: #eee;
+  font: 14px Play;
+  color: #666;
+}
+a {
+  color: #666;
+}
+
+* {
+  outline: none !important;
+}
+
+.main, .footer {
+  width: 960px;
+  margin: 0 auto; /* центрируем содержимое */
+}
+.main {
+  background: #fff;
+  box-shadow: 0 0 4px rgba( 0, 0, 0, .15 );
+  border-radius: 0 0 6px 6px;
+  overflow: hidden;
+}
+
+/* Лого */
+.header {
+  border-top: 4px solid #60a2ce;
+  /*background: #fff;*/
+  /*background: url( "/resources/img/sprite-small.png" ) center center repeat;*/
+  /*background-size: 100%;*/
+}
+.header > .logo {
+  height: 120px;
+  padding-left: 160px;
+  background: url( "/resources/img/logo-small.png" ) 10px center no-repeat;
+}
+  .header > .logo > span {
+    padding-left: 20px;
+    vertical-align: middle;
+    font: italic 16px/120px "Roboto Condensed";
+  }
+
+/* Верхнее меню */
+.header-menu {
+  position: relative;
+  box-shadow: 0 0 4px rgba( 0, 0, 0, .15 );
+  z-index: 10;
+  background: #fff;
+}
+.header-menu ul {
+  list-style-type: none;
+}
+  .header-menu li {
+    position: relative;
+    display: inline-block;
+  }
+  .header-menu a {
+    display: block;
+    padding: 15px 20px;
+    font: 14px Play;
+    text-decoration: none;
+    transition: all .15s linear;
+  }
+    .header-menu a:hover, .header-menu a.active  {
+      background: #60a2ce;
+      color: #fff;
+    }
+  .header-menu li > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba( 0, 0, 0, .15);
+    z-index: 1;
+  }
+    .header-menu li > ul > li {
+      display: block;
+      min-width: 200px;
+      white-space: nowrap;
+    }
+  .header-menu li:hover > ul {
+    display: block;
+  }
+    
+.content-wrapper {
+  display: table;
+  width: 100%;
+  clear: both;
+}
+
+  /* Мероприятия */
+  .events {
+    display: table;
+    width: 100%;
+    height: 240px;
+    table-layout: fixed;
+  }
+  .events.small {
+    height: 80px;
+  }
+  .events.middle {
+    height: 200px;
+  }
+  .event {
+    position: relative;
+    display: table-cell;
+    box-sizing: border-box;
+    background-position: center;
+    background-size: 140%;
+    /*transition: background-size .3s linear;
+    -o-transition: background-size .3s linear;*/
+  }
+  .event.first {
+    background-image: url( "/resources/img/events-first.jpg" );
+  }
+  .event.second {
+    background-image: url( "/resources/img/events-second.jpg" );
+  }
+  .event.third {
+    background-image: url( "/resources/img/events-third.jpg" );
+  }
+  /* История сёрфинга */
+  .event.history {
+    background-image: url( "/resources/img/history.jpg" );
+  }
+  /* Полезные ссылки */
+  .event.links {
+    background-image: url( "/resources/img/links.jpg" );
+  }
+  /* Обучение */
+  .event.learn {
+    background-image: url( "/resources/img/learn.jpg" );
+  }
+  /* Фильмы о сёрфинге */
+  .event.videos {
+    background-image: url( "/resources/img/films.jpg" );
+  }
+  /* Школа сёрфинга */
+  .event.school {
+    background-image: url( "/resources/img/school.jpg" );
+  }
+  /* Уроки сёрфинга */
+  .event.lessons {
+    background-image: url( "/resources/img/lessons.jpg" );
+  }
+  /* Уроки сёрфинга */
+  .event._events {
+    background-image: url( "/resources/img/events.jpg" );
+  }
+  /* Контакты */
+  .event.contacts {
+    background-image: url( "/resources/img/contacts.jpg" );
+  }
+  /* Мероприятия */
+  .event.meeting {
+    background-image: url( "/resources/img/meeting.jpg" );
+  }
+/* Путешествия */
+  .event.travel {
+    background-image: url( "/resources/img/travel.jpg" );
+  }
+    /*.event:hover {
+      background-size: 140%;
+    }*/
+    .event > a {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      background: rgba( 0, 0, 0, .3 );
+      font: 14px "Roboto Condensed";
+      color: #fff;
+    }
+      .event > a:hover {
+        text-decoration: underline;
+      }
+    .event i {
+      display: block;
+      font: 12px Play;
+    }
+  
+  /* Объявления */
+  .notification {
+    margin-top: 10px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-left: 4px solid #8cbc8c;
+    background: #fafafa;
+    font: 14px Play;
+  }
+  
+  /* Новости */
+  .news {
+    padding: 5px 10px;
+  }
+  .news-box {
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-left: 4px solid #60a2ce;
+    background: #fafafa;
+  }
+    .news-box a {
+      display: inline-block;
+      padding: 10px 20px;
+      vertical-align: middle;
+      font: 18px Play;
+    }
+    .news-box img {
+      width: 200px;
+      vertical-align: middle;
+    }
+
+/* Реклама */
+.ads {
+  display: table-cell;
+  width: 180px;
+  padding: 20px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  background: #fafafa;
+  color: #bbb;
+}
+
+.footer {
+  box-sizing: border-box;
+  padding: 10px 15px;
+  text-align: right;
+  color: #aaa;
+}
+  .footer a {
+    color: #aaa;
+    transition: color .3s linear;
+    text-decoration: underline;
+  }
+    .footer a:hover {
+      color: #60a2ce;
+      text-decoration: none;
+    }
+
+
+/* Основное содержимое */
+.content {
+  position: relative;
+  display: table-cell;
+  overflow: hidden;
+  padding: 20px;
+  box-shadow: 0 0 4px rgba( 0, 0, 0, .15 );
+  padding: 20px;
+}
+.content .photo {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 10px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+  .content p {
+    padding: 10px 0;
+  }
+  .content p, .content li {
+    font: 14px/16px Play;
+    text-align: justify;
+    color: #666;
+  }
+    .content ul {
+      list-style-type: circle;
+    }
+    .content li {
+      margin-left: 25px;
+    }
+  .content h1 {
+    padding: 10px 0;
+    font: 20px "Roboto Condensed";
+  }
+  .content h2 {
+    padding: 10px 0;
+    font: 16px "Roboto Condensed";
+  }
+  
+  .content .photo.about-us {
+    background-image: url( "/resources/img/about-us.jpg" );
+  }
+  .content .photo.history01 {
+    background-image: url( "/resources/img/history01.jpg" );
+  }
+  .content .photo.history02 {
+    background-image: url( "/resources/img/history02.jpg" );
+  }
+  .content .photo.history03 {
+    background-image: url( "/resources/img/history03.jpg" );
+  }
+  .content .photo.history04{
+    background-image: url( "/resources/img/history04.jpg" );
+  }
+  .content .photo.history05 {
+    background-image: url( "/resources/img/history05.jpg" );
+  }
+  .content .photo.history06 {
+    background-image: url( "/resources/img/history06.jpg" );
+  }
+  .content .photo.school01 {
+    background-image: url( "/resources/img/school01.jpg" );
+  }
+  .content .photo.lessons01 {
+    background-image: url( "/resources/img/lessons01.jpg" );
+  }
+  .content .photo.meeting01, .event.meeting01 {
+    background-image: url( "/resources/img/meeting01.jpg" );
+  }
+  .content .photo.meeting02, .event.meeting02 {
+    background-image: url( "/resources/img/meeting02.jpg" );
+  }
+  .content .photo.meeting03, .event.meeting03 {
+    background-image: url( "/resources/img/meeting03.jpg" );
+  }
+  .content .photo.meeting04, .event.meeting04 {
+    background-image: url( "/resources/img/meeting04.jpg" );
+  }
+  .content .photo.travel01, .event.travel01 {
+    background-image: url( "/resources/img/travel01.jpg" );
+  }
+  .content .photo.travel02, .event.travel02 {
+    background-image: url( "/resources/img/travel02.jpg" );
+  }
+  .content .photo.travel03, .event.travel03 {
+    background-image: url( "/resources/img/travel03.jpg" );
+  }
+  .content .photo.travel04, .event.travel04 {
+    background-image: url( "/resources/img/travel04.jpg" );
+  }
+  .content .photo.contacts01 {
+    background-image: url( "/resources/img/contacts01.jpg" );
+  }
+  
+/* Фильмы о сёрфинге */
+.films {
+  width: 100%;
+  box-sizing: border-box;
+}
+  .films .film {
+    display: table;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+  }
+    .films .film:hover {
+      box-shadow: 0 0 4px rgba( 0, 0, 0, .15 );
+      background: #fefefe;
+    }
+  .films .film span {
+    display: table-cell;
+  }
+  .films .film i {
+    display: table-cell;
+    width: 140px;
+    height: 200px;
+    vertical-align: top;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+    .films.links .film i {
+      height: 80px;
+    }
+  .films .film b {
+    display: inline-block;
+    padding: 10px 10px 0;
+    font: 16px "Roboto Condensed";
+  }
+  .films .film p {
+    display: inline-block;
+    font: 13px/14px Play;
+    padding: 10px;
+  }
+  .film .film01 {
+    background-image: url( "/resources/img/film01.jpg" );
+  }
+  .film .film02 {
+    background-image: url( "/resources/img/film02.jpg" );
+  }
+  .film .film03 {
+    background-image: url( "/resources/img/film03.jpg" );
+  }
+  .film .film04 {
+    background-image: url( "/resources/img/film04.jpg" );
+  }
+  .film .film05 {
+    background-image: url( "/resources/img/film05.jpg" );
+  }
+  .film .film06 {
+    background-image: url( "/resources/img/film06.jpg" );
+  }
+  .film .film07 {
+    background-image: url( "/resources/img/film07.jpg" );
+  }
+  .film .film08 {
+    background-image: url( "/resources/img/film08.jpg" );
+  }
+  .film .film09 {
+    background-image: url( "/resources/img/film09.jpg" );
+  }
+
+  
+/* Общие стили */
+.page-link {
+  font: 14px "Roboto Condensed";
+  color: #60a2ce;
+  transition: color .15s linear;
+}
+  .page-link:hover {
+    text-decoration: none;
+    color: #8cbc8c;
+  }

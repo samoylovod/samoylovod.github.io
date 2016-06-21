@@ -1,0 +1,24 @@
+.main {
+  position: relative;
+  top: -2px;
+  border: 2px solid #eaeaea;
+}
+.header-menu {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.header-menu li > ul {
+  border: 1px solid #eee;
+}
+.event > a {
+  background-image: url( "/resources/img/empty.png" );
+}
+.films .film {
+  border: 1px solid transparent;
+}
+.films .film:hover {
+  border-color: #eee;
+}
+.ads {
+  border-left: 1px solid #eee;
+}
